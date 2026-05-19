@@ -227,11 +227,11 @@ video {
 }
 
 .brand-logo {
-  width: 112px;
-  height: 40px;
+  width: 124px;
+  height: 58px;
   flex: 0 0 auto;
   display: block;
-  background: url("assets/logo-alzua.png") center 50% / 104px 104px no-repeat;
+  background: url("assets/logo-alzua-small.webp") center 50% / 116px 116px no-repeat;
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2))
     drop-shadow(0 8px 16px rgba(0, 0, 0, 0.36));
@@ -431,12 +431,7 @@ video {
 
 .hero-fallback {
   z-index: -4;
-  /* Reemplazar assets/hero-operacion.jpg por foto de duenos, camiones, barco y planta. */
-  background-image:
-    linear-gradient(115deg, rgba(17, 16, 14, 0.88), rgba(17, 16, 14, 0.32)),
-    url("assets/hero-operacion.jpg");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(115deg, rgba(17, 16, 14, 0.88), rgba(17, 16, 14, 0.32));
 }
 
 .hero::before {
@@ -678,6 +673,19 @@ h3 {
   overflow: hidden;
 }
 
+.human-section,
+.manifesto-section,
+.command-center,
+.infrastructure,
+.reel-section,
+.services,
+.difference,
+.final-cta,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 .chapter::before {
   content: attr(data-chapter);
   position: absolute;
@@ -729,8 +737,7 @@ h3 {
   overflow: hidden;
   border-radius: var(--radius);
   background-color: #2c2a25;
-  background-size: cover;
-  background-position: center;
+  background: #2c2a25;
   box-shadow: 0 18px 50px rgba(17, 16, 14, 0.13);
   transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
 }
@@ -748,6 +755,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(to top, rgba(17, 16, 14, 0.72), rgba(17, 16, 14, 0.18) 58%);
   transition: opacity 260ms ease, background 260ms ease;
 }
@@ -765,10 +773,20 @@ h3 {
 .photo-card img,
 .mosaic-card img {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
   pointer-events: none;
+  transition: opacity 260ms ease, filter 260ms ease;
+}
+
+.photo-card:hover img,
+.mosaic-card:hover img {
+  opacity: 0.94;
+  filter: contrast(1.02) saturate(0.96);
 }
 
 .photo-card figcaption {
@@ -776,6 +794,7 @@ h3 {
   left: 14px;
   right: 14px;
   bottom: 14px;
+  z-index: 2;
   color: var(--white);
   font-weight: 800;
   text-transform: uppercase;
@@ -809,7 +828,7 @@ h3 {
   height: 126px;
   display: grid;
   place-items: center;
-  background: url("assets/favicon-alzua.png") center / contain no-repeat;
+  background: url("assets/favicon-alzua-small.webp") center / contain no-repeat;
   filter: drop-shadow(0 16px 26px rgba(17, 16, 14, 0.12));
 }
 
@@ -857,18 +876,18 @@ h3 {
 .photo-owner {
   grid-column: span 6;
   min-height: 310px;
-  /* Reemplazar assets/equipo-duenios.jpg por foto de duenos o familia. */
-  background-image: url("assets/equipo-duenios.jpg"), linear-gradient(135deg, #38332a, #141311);
+}
+
+.photo-owner img {
+  object-position: center center;
 }
 
 .photo-team {
   grid-column: span 3;
-  background-image: url("assets/equipo-operarios.jpg"), linear-gradient(135deg, #4b4030, #181714);
 }
 
 .photo-office {
   grid-column: span 3;
-  background-image: url("assets/oficina-atencion.jpg"), linear-gradient(135deg, #5d5345, #171614);
 }
 
 .cinema-strip {
@@ -1236,29 +1255,29 @@ h3 {
 }
 
 .mosaic-card:nth-child(1) {
-  background-image: url("assets/infra-rio-parana.jpg"), linear-gradient(135deg, #343027, #12110f);
+  background: #343027;
 }
 
 .mosaic-card:nth-child(2) {
-  background-image: url("assets/barco-don-pancho.jpg"), linear-gradient(135deg, #3c382e, #171512);
+  background: #3c382e;
 }
 
 .mosaic-card:nth-child(3) {
-  background-image: url("assets/flota-camiones.jpg"), linear-gradient(135deg, #4d432e, #171512);
+  background: #4d432e;
 }
 
 .mosaic-card:nth-child(4) {
-  background-image: url("assets/silos-acopio.jpg"), linear-gradient(135deg, #554b3b, #171512);
+  background: #554b3b;
 }
 
 .mosaic-card:nth-child(5) {
-  background-image: url("assets/maquinaria-pesada.jpg"), linear-gradient(135deg, #3b352d, #171512);
+  background: #3b352d;
 }
 
 .mosaic-card div {
   position: absolute;
   inset: auto 18px 18px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .mosaic-card h3,
@@ -1280,7 +1299,7 @@ h3 {
   color: var(--white);
   background:
     linear-gradient(rgba(17, 16, 14, 0.9), rgba(17, 16, 14, 0.78)),
-    url("assets/reel-fondo.jpg");
+    url("assets/reel-fondo.webp");
   background-size: cover;
   background-position: center;
 }
@@ -1431,7 +1450,7 @@ h3 {
   padding: 80px 0;
   background:
     linear-gradient(rgba(17, 16, 14, 0.7), rgba(17, 16, 14, 0.9)),
-    url("assets/cta-obra.jpg");
+    url("assets/cta-obra.webp");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -1884,6 +1903,7 @@ h1 span {
 
 @media (min-width: 980px) {
   .nav {
+    width: min(1000px, calc(100% - 32px));
     position: relative;
     justify-content: center;
   }
@@ -1902,9 +1922,9 @@ h1 span {
   }
 
   .brand-logo {
-    width: 132px;
-    height: 48px;
-    background-size: 126px 126px;
+    width: 142px;
+    height: 64px;
+    background-size: 134px 134px;
   }
 
   .nav-toggle {
@@ -1925,6 +1945,7 @@ h1 span {
     backdrop-filter: blur(18px);
     transform: none;
     visibility: visible;
+    opacity: 1;
     transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
   }
 
