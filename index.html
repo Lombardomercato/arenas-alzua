@@ -17,6 +17,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arenasalzua.com" />
     <meta property="og:image" content="assets/hero-operacion.jpg" />
+    <link rel="icon" type="image/png" href="assets/favicon-alzua.png" />
+    <link rel="apple-touch-icon" href="assets/favicon-alzua.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -33,11 +35,7 @@
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Navegación principal">
         <a class="brand" href="#inicio" aria-label="Arenas Alzua inicio">
-          <span class="brand-mark">AA</span>
-          <span class="brand-copy">
-            <strong>ARENAS ALZUA</strong>
-            <small>Pueblo Esther</small>
-          </span>
+          <span class="brand-logo" aria-hidden="true"></span>
         </a>
 
         <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
@@ -52,7 +50,7 @@
           <a href="#servicios" data-nav-pill>Servicios</a>
           <a href="#diferencial" data-nav-pill>Diferencial</a>
           <a href="#contacto" data-nav-pill>Contacto</a>
-          <a class="btn btn-accent btn-small" href="https://wa.me/5493413703676?text=Hola%2C%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
+          <a class="btn btn-accent btn-small" href="https://wa.me/5493413703676?text=Hola%2C%20vengo%20de%20la%20web%20de%20Arenas%20Alzua%20y%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
             Pedir cotización
           </a>
         </div>
@@ -78,14 +76,15 @@
           <p class="kicker">Empresa familiar con espalda industrial</p>
           <h1><span>Construimos</span> <span>confianza desde hace</span> <span>más de 45 años.</span></h1>
           <p class="hero-copy">
-            <span>Resolvemos</span>
-            <strong class="text-type" data-text-type data-texts="barco arenero propio|planta sobre el Paraná|flota y bateas|arena de origen propio|acopio para tu obra">arena propia</strong>
+            <span>Ofrecemos</span>
+            <strong class="text-type" data-text-type data-texts="arena, piedra y granza|materiales de construcción|servicio de volquete|atención personalizada">arena, piedra y granza</strong>
             <span class="text-cursor" aria-hidden="true">|</span>
             <span>en Pueblo Esther y alrededores.</span>
           </p>
           <div class="hero-actions">
             <a class="btn btn-accent" href="#contacto">Pedir cotización</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/5493413703676?text=Hola%2C%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
+            <a class="btn btn-whatsapp" href="https://wa.me/5493413703676?text=Hola%2C%20vengo%20de%20la%20web%20de%20Arenas%20Alzua%20y%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
+              <span class="wa-icon" aria-hidden="true"></span>
               Hablar por WhatsApp
             </a>
           </div>
@@ -147,7 +146,7 @@
       <section class="manifesto-section">
         <div class="container manifesto-grid">
           <div class="manifesto-mark reveal" aria-hidden="true">
-            <span>AA</span>
+            <span></span>
           </div>
           <div class="manifesto-copy reveal">
             <p class="kicker">Nuestra forma de trabajar</p>
@@ -212,7 +211,7 @@
             </div>
             <div class="signal-grid">
               <article>
-                <small>Obras acompaÃ±adas</small>
+                <small>Obras acompañadas</small>
                 <strong><span data-counter data-target="3200" data-duration="7200">0</span>+</strong>
               </article>
               <article>
@@ -220,13 +219,18 @@
                 <strong><span data-counter data-target="18000" data-duration="8200">0</span>+</strong>
               </article>
               <article>
-                <small>AÃ±os de oficio</small>
+                <small>Años de oficio</small>
                 <strong><span data-counter data-target="45" data-duration="5200">0</span>+</strong>
               </article>
               <article>
                 <small>Base operativa</small>
                 <strong>PE</strong>
               </article>
+            </div>
+            <div class="swap-indicator" data-swap-indicator aria-hidden="true">
+              <span class="is-active">01</span>
+              <span>02</span>
+              <span>03</span>
             </div>
             <div class="card-swap" data-card-swap aria-label="Circuito operativo">
               <article class="swap-card is-active">
@@ -366,24 +370,24 @@
             <p class="kicker">El diferencial</p>
             <h2>El oficio de siempre, con capacidad para responder hoy.</h2>
           </div>
-          <div class="difference-list scroll-stack" data-scroll-stack>
-            <article class="difference-item reveal glow-card" data-stack-card data-border-glow>
+          <div class="difference-list">
+            <article class="difference-item reveal">
               <strong>Experiencia</strong>
               <p>Más de cuatro décadas abasteciendo obras, corralones, constructoras y particulares.</p>
             </article>
-            <article class="difference-item reveal glow-card" data-stack-card data-border-glow>
+            <article class="difference-item reveal">
               <strong>Atención cercana</strong>
               <p>Te atiende gente que entiende de obra, no un sistema automático.</p>
             </article>
-            <article class="difference-item reveal glow-card" data-stack-card data-border-glow>
+            <article class="difference-item reveal">
               <strong>Entrega y acopio</strong>
               <p>Comprá hoy, coordiná entregas y ordená el material según el avance de tu obra.</p>
             </article>
-            <article class="difference-item reveal glow-card" data-stack-card data-border-glow>
+            <article class="difference-item reveal">
               <strong>Zona</strong>
               <p>Estamos en Pueblo Esther y trabajamos cerca, con recorridos coordinados para la zona.</p>
             </article>
-            <article class="difference-item reveal glow-card" data-stack-card data-border-glow>
+            <article class="difference-item reveal">
               <strong>Calidad</strong>
               <p>Arena, materiales y logística con seguimiento desde el origen hasta tu obra.</p>
             </article>
@@ -397,7 +401,8 @@
           <h2>Tu obra también es parte de nuestra historia.</h2>
           <p>Mandanos un mensaje. Te ayudamos a elegir materiales, coordinar entregas y avanzar con respaldo.</p>
           <div class="final-actions">
-            <a class="btn btn-accent" href="https://wa.me/5493413703676?text=Hola%2C%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
+            <a class="btn btn-accent" href="https://wa.me/5493413703676?text=Hola%2C%20vengo%20de%20la%20web%20de%20Arenas%20Alzua%20y%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">
+              <span class="wa-icon" aria-hidden="true"></span>
               Pedir cotización
             </a>
             <a class="btn btn-outline" href="tel:+543402499052">Llamar ahora</a>
@@ -412,34 +417,39 @@
     <footer class="footer">
       <div class="container footer-grid">
         <div>
-          <a class="brand footer-brand" href="#inicio" aria-label="Arenas Alzua inicio">
-            <span class="brand-mark">AA</span>
-            <span class="brand-copy">
-              <strong>ARENAS ALZUA</strong>
-              <small>Ruta 21 km. 285</small>
-            </span>
-          </a>
-          <p>Pueblo Esther, Santa Fe, Argentina</p>
-          <p>Área de servicio: Pueblo Esther y alrededores</p>
+          <a class="footer-name" href="#inicio" aria-label="Arenas Alzua inicio">ARENAS ALZUA</a>
+          <ul>
+            <li>Ruta 21 km. 285</li>
+            <li>Pueblo Esther, Santa Fe, Argentina</li>
+            <li>Área de servicio: Pueblo Esther y alrededores</li>
+          </ul>
         </div>
         <div>
           <h2>Contacto</h2>
           <ul>
-            <li><a href="https://wa.me/5493413703676?text=Hola%2C%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener">WhatsApp: +54 9 341 3703676</a></li>
+            <li><a class="contact-link" href="https://wa.me/5493413703676?text=Hola%2C%20vengo%20de%20la%20web%20de%20Arenas%20Alzua%20y%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener"><span class="wa-icon" aria-hidden="true"></span>WhatsApp: +54 9 341 3703676</a></li>
             <li><a href="tel:+543402499052">Teléfono: (03402) 499052 / 499300</a></li>
             <li><a href="mailto:comercial@arenasalzua.com.ar">comercial@arenasalzua.com.ar</a></li>
           </ul>
         </div>
         <div>
           <h2>Horarios</h2>
-          <p>Lunes a Viernes de 7:00 a 17:00</p>
-          <p>Sábados de 7:00 a 13:00</p>
+          <ul>
+            <li>Lunes a Viernes de 7:00 a 17:00</li>
+            <li>Sábados de 7:00 a 13:00</li>
+          </ul>
         </div>
+      </div>
+      <div class="container developer-credit">
+        <a href="https://wa.me/543416186760?text=Hola%2C%20vengo%20de%20una%20web%20desarrollada%20por%20vos%2C%20quiero%20tener%20mas%20info.." target="_blank" rel="noopener" aria-label="Contactar a LAB by Runia por WhatsApp">
+          <span>Developed by</span>
+          <strong>LAB_<em>by Runia</em></strong>
+        </a>
       </div>
     </footer>
 
-    <a class="whatsapp-float" href="https://wa.me/5493413703676?text=Hola%2C%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-      WA
+    <a class="whatsapp-float" href="https://wa.me/5493413703676?text=Hola%2C%20vengo%20de%20la%20web%20de%20Arenas%20Alzua%20y%20quiero%20consultar%20por%20materiales%20para%20mi%20obra." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+      <span class="wa-icon" aria-hidden="true"></span>
     </a>
 
     <script src="script.js" defer></script>

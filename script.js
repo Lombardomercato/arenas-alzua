@@ -257,6 +257,7 @@ if (motionAllowed && window.matchMedia("(pointer: fine)").matches) {
 
 cardSwaps.forEach((swap) => {
   const cards = Array.from(swap.querySelectorAll(".swap-card"));
+  const indicatorItems = Array.from(swap.parentElement?.querySelectorAll("[data-swap-indicator] span") || []);
   if (cards.length < 2) return;
   let active = 0;
 
@@ -264,6 +265,9 @@ cardSwaps.forEach((swap) => {
     cards.forEach((card, index) => {
       card.classList.toggle("is-active", index === active);
       card.classList.toggle("is-next", index === (active + 1) % cards.length);
+    });
+    indicatorItems.forEach((item, index) => {
+      item.classList.toggle("is-active", index === active);
     });
   };
 
