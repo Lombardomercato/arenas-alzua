@@ -1968,11 +1968,13 @@ h1 span {
     display: inline-flex;
     align-items: center;
     padding: 8px 14px;
+    max-width: 190px;
     color: var(--black);
     background: transparent;
     font-size: 0.78rem;
     font-weight: 800;
     text-transform: uppercase;
+    transition: color 180ms ease, background 180ms ease, max-width 240ms ease, padding 240ms ease, opacity 180ms ease;
   }
 
   .nav-logo-pill {
@@ -2021,6 +2023,27 @@ h1 span {
 
   .site-header.is-scrolled .nav-panel .btn {
     background-color: rgba(237, 181, 46, 0.88);
+  }
+
+  .site-header.is-scrolled .nav-panel a[data-nav-pill] {
+    max-width: 0;
+    padding-inline: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .site-header.is-scrolled .nav-logo-pill {
+    min-width: 76px;
+    padding-inline: 14px 12px !important;
+  }
+
+  .site-header.is-scrolled .nav-logo-pill img {
+    width: 62px;
+  }
+
+  .site-header.is-scrolled .nav-panel .btn {
+    min-height: 34px;
+    padding-inline: 14px;
   }
 }
 
