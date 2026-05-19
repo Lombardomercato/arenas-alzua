@@ -348,6 +348,10 @@ video {
   background: var(--machinery);
 }
 
+.nav-logo-pill {
+  display: none;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -540,7 +544,7 @@ h3 {
 
 .text-type {
   display: inline-block;
-  min-width: min(9ch, 100%);
+  min-width: 0;
 }
 
 .text-cursor {
@@ -1909,8 +1913,7 @@ h1 span {
   }
 
   .nav > .brand {
-    position: absolute;
-    left: 0;
+    display: none;
   }
 
   .site-header .brand {
@@ -1936,7 +1939,7 @@ h1 span {
     display: flex;
     align-items: center;
     gap: 3px;
-    padding: 4px;
+    padding: 3px;
     color: var(--black);
     background: rgba(255, 255, 255, 0.92);
     border: 2px solid rgba(17, 16, 14, 0.94);
@@ -1950,9 +1953,9 @@ h1 span {
   }
 
   .site-header.is-scrolled .nav-panel {
-    background: rgba(255, 255, 255, 0.72);
-    border-color: rgba(17, 16, 14, 0.45);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.62);
+    border-color: rgba(17, 16, 14, 0.12);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
     backdrop-filter: blur(20px);
   }
 
@@ -1961,7 +1964,7 @@ h1 span {
   }
 
   .nav-panel a {
-    min-height: 34px;
+    min-height: 38px;
     display: inline-flex;
     align-items: center;
     padding: 8px 14px;
@@ -1972,6 +1975,33 @@ h1 span {
     text-transform: uppercase;
   }
 
+  .nav-logo-pill {
+    min-width: 88px;
+    padding: 2px 14px 2px 16px !important;
+    margin-right: 3px;
+    border-right: 1px solid rgba(17, 16, 14, 0.12);
+    border-radius: 999px 8px 8px 999px !important;
+  }
+
+  .nav-logo-pill img {
+    width: 70px;
+    height: auto;
+    opacity: 0.92;
+    transform: translateY(0);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .nav-logo-pill:hover,
+  .nav-logo-pill:focus {
+    background: rgba(17, 16, 14, 0.06) !important;
+  }
+
+  .nav-logo-pill:hover img,
+  .nav-logo-pill:focus img {
+    opacity: 1;
+    transform: translateY(0) scale(1.03);
+  }
+
   .nav-panel a:hover,
   .nav-panel a:focus,
   .nav-panel a.is-active {
@@ -1980,11 +2010,17 @@ h1 span {
   }
 
   .nav-panel .btn {
-    min-height: 34px;
-    padding: 8px 15px;
+    min-height: 38px;
+    padding: 8px 18px;
+    border-radius: 999px;
     color: var(--black);
     background-color: var(--machinery);
+    border-color: transparent;
     box-shadow: none;
+  }
+
+  .site-header.is-scrolled .nav-panel .btn {
+    background-color: rgba(237, 181, 46, 0.88);
   }
 }
 
