@@ -194,12 +194,20 @@ video {
 
 .nav {
   width: min(1200px, calc(100% - 28px));
-  min-height: var(--header-height);
-  margin: 0 auto;
+  min-height: 54px;
+  margin: 10px auto 0;
+  padding: 5px 6px 5px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
+  color: var(--black);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 16, 14, 0.22);
+  border-radius: 999px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+  transition: width 220ms ease, padding 220ms ease, background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .brand {
@@ -218,8 +226,10 @@ video {
   backdrop-filter: none;
 }
 
-.site-header.is-scrolled:not(.is-open) .brand,
-.site-header.is-open .brand {
+.site-header.is-scrolled:not(.is-open) .brand {
+  width: 0;
+  flex-basis: 0;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -227,14 +237,12 @@ video {
 }
 
 .brand-logo {
-  width: 124px;
-  height: 58px;
+  width: 88px;
+  height: 36px;
   flex: 0 0 auto;
   display: block;
-  background: url("assets/logo-alzua-small.webp") center 50% / 116px 116px no-repeat;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.2))
-    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.36));
+  background: url("assets/logo-alzua-nav.webp") center / contain no-repeat;
+  filter: none;
 }
 
 .brand-copy {
@@ -261,11 +269,10 @@ video {
   display: inline-grid;
   place-content: center;
   gap: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(17, 16, 14, 0.14);
   border-radius: 999px;
-  background: rgba(17, 16, 14, 0.42);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(14px);
+  background: rgba(17, 16, 14, 0.06);
+  box-shadow: none;
   cursor: pointer;
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -273,7 +280,7 @@ video {
 .nav-toggle span {
   width: 21px;
   height: 2px;
-  background: var(--white);
+  background: var(--black);
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
@@ -297,6 +304,23 @@ video {
 
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-header.is-scrolled:not(.is-open) .nav {
+  width: 56px;
+  padding: 5px 6px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  justify-content: flex-end;
+}
+
+.site-header.is-scrolled:not(.is-open) .nav-toggle {
+  background: rgba(246, 243, 238, 0.82);
+  border-color: rgba(17, 16, 14, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(16px);
 }
 
 .nav-panel {
@@ -1908,7 +1932,26 @@ h1 span {
 @media (min-width: 980px) {
   .nav {
     width: min(1000px, calc(100% - 32px));
+    min-height: var(--header-height);
+    margin: 0 auto;
+    padding: 0;
     position: relative;
+    justify-content: center;
+    gap: 20px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .site-header.is-scrolled:not(.is-open) .nav {
+    width: min(1000px, calc(100% - 32px));
+    padding: 0;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
     justify-content: center;
   }
 
