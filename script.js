@@ -91,15 +91,17 @@ updateStackCards();
 if (crosshair && motionAllowed && window.matchMedia("(pointer: fine)").matches) {
   document.body.classList.add("has-crosshair");
 
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      document.documentElement.style.setProperty("--cross-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--cross-y", `${event.clientY}px`);
-      document.body.classList.add("is-crosshair-ready");
-    },
-    { passive: true }
-  );
+  const updateCrosshair = (event) => {
+    document.documentElement.style.setProperty("--cross-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--cross-y", `${event.clientY}px`);
+    document.body.classList.add("is-crosshair-ready");
+  };
+
+  window.addEventListener("pointermove", updateCrosshair, { passive: true });
+
+  if ("onpointerrawupdate" in window) {
+    window.addEventListener("pointerrawupdate", updateCrosshair, { passive: true });
+  }
 
   document.querySelectorAll("a, button, [data-tilt], [data-border-glow]").forEach((item) => {
     item.addEventListener("pointerenter", () => document.body.classList.add("is-crosshair-hovering"));
