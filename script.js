@@ -90,26 +90,12 @@ updateStackCards();
 
 if (crosshair && motionAllowed && window.matchMedia("(pointer: fine)").matches) {
   document.body.classList.add("has-crosshair");
-  let crosshairX = window.innerWidth / 2;
-  let crosshairY = window.innerHeight / 2;
-  let renderedX = crosshairX;
-  let renderedY = crosshairY;
-
-  const moveCrosshair = () => {
-    renderedX += (crosshairX - renderedX) * 0.14;
-    renderedY += (crosshairY - renderedY) * 0.14;
-    document.documentElement.style.setProperty("--cross-x", `${renderedX}px`);
-    document.documentElement.style.setProperty("--cross-y", `${renderedY}px`);
-    requestAnimationFrame(moveCrosshair);
-  };
-
-  requestAnimationFrame(moveCrosshair);
 
   window.addEventListener(
     "pointermove",
     (event) => {
-      crosshairX = event.clientX;
-      crosshairY = event.clientY;
+      document.documentElement.style.setProperty("--cross-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--cross-y", `${event.clientY}px`);
       document.body.classList.add("is-crosshair-ready");
     },
     { passive: true }
